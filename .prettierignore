@@ -35,3 +35,7 @@ Thumbs.db
 
 # “Do not touch” extremely sensitive markup blocks
 # (You can override with <!-- prettier-ignore -->)
+
+legacy/**/*.html
+sharepoint/**/*.html
+dist/**
