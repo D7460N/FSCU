@@ -1,24 +1,19 @@
 {
-  // Prettier becomes the single source of truth
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "editor.formatOnType": false,
 
-  // D7460N standard: consistent 2 spaces everywhere
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
 
-  // Word wrapping helps dyslexia + readability
   "editor.wordWrap": "on",
 
-  // Respect repo-local configs
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": true,
   "prettier.configPath": ".prettierrc",
 
-  // LANG-SPECIFIC FORMAT BEHAVIOR
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
@@ -41,7 +36,6 @@
     "editor.formatOnSave": true
   },
 
-  // Optional: Ensures VS Code never silently “fixes” files
   "files.autoSave": "off",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true
