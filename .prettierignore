@@ -1,0 +1,37 @@
+# dependencies
+node_modules
+bower_components
+
+# build / output
+dist
+build
+out
+coverage
+.tmp
+temp
+
+# logs
+*.log
+
+# package manager locks
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# compiled assets
+**/*.min.js
+**/*.min.css
+
+# generated vendor
+public/vendor
+public/libs
+
+# VCS & editors
+.git
+.gitignore
+.vscode
+.DS_Store
+Thumbs.db
+
+# “Do not touch” extremely sensitive markup blocks
+# (You can override with <!-- prettier-ignore -->)
