@@ -1,9 +1,9 @@
 ## BUG REPORT
 
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
+name: Bug report<br>
+about: Create a report to help us improve<br>
+title: ''<br>
+labels: ''<br>
 assignees: ''
 
 ---
