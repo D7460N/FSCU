@@ -1,0 +1,5 @@
+@media (display-mode: standalone) {
+  body {
+    padding-top: 0.5rem;
+  }
+}
