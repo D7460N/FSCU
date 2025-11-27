@@ -38,6 +38,6 @@ What actually happened?
 ### ADDITIONAL NOTES 
 Include screenshots or minimal reproduction if helpful.
 
-**SCREENSHOT**
+### SCREENSHOT
 If applicable, add screenshots to help explain your problem.
 
