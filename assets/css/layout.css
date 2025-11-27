@@ -1,0 +1,41 @@
+figure {
+  margin: 0;
+}
+
+img {
+  width: 64px;
+  height: auto;
+}
+
+section {
+  padding: 1.25rem 1.5rem;
+  margin-block: 0.75rem;
+  background-color: var(--bg-panel);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-panel);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.875rem;
+}
