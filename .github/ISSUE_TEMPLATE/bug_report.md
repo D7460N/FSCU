@@ -1,4 +1,5 @@
----
+## BUG REPORT
+
 name: Bug report
 about: Create a report to help us improve
 title: ''
@@ -7,32 +8,36 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+### SUMMARY 
+Describe the issue clearly and concisely.
 
-**To Reproduce**
+**STEPS TO REPRODUCE**
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+### EXPECTED BEHAVIOR 
+What should have happened?
 
-**Screenshots**
+### ACTUAL BEHAVIOR 
+What actually happened?
+
+### ENVIRONMENT 
+- Browser and version:
+- Device and version:
+- OS and version:
+
+### CHECKS 
+- [ ] No classes, IDs, or `data-*` attributes were involved
+- [ ] CSS logic behaves as intended
+- [ ] JavaScript was not affecting UI state
+- [ ] Issue follows D7460N Architecture rules
+
+### ADDITIONAL NOTES 
+Include screenshots or minimal reproduction if helpful.
+
+**SCREENSHOT**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
