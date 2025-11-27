@@ -1,0 +1,51 @@
+repository:
+  name: d7460n-starter
+  description: >
+    Zero-dependency HTML/CSS starter using the D7460N Architecture.
+  homepage: ""
+  private: false
+
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  has_downloads: false
+
+  default_branch: main
+
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  delete_branch_on_merge: true
+
+  topics:
+    - d7460n
+    - architecture
+    - html
+    - css
+    - zero-dependency
+    - github-pages
+
+branches:
+  - name: main
+    protection:
+      required_status_checks: null
+      enforce_admins: false
+      required_pull_request_reviews: null
+      restrictions: null
+
+labels:
+  - name: bug
+    color: d73a4a
+    description: Something is not working.
+
+  - name: enhancement
+    color: a2eeef
+    description: New feature or improvement.
+
+  - name: documentation
+    color: 0075ca
+    description: Docs-only changes.
+
+  - name: chore
+    color: fef2c0
+    description: Maintenance or refactor work.
