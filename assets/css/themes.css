@@ -1,0 +1,10 @@
+:root {
+  color-scheme: light dark;
+
+  --bg-page: light-dark(#f5f7ff, #050816);
+  --bg-panel: light-dark(#ffffff, #0b1020);
+  --border-panel: light-dark(#c5cbe8, rgba(255, 255, 255, 0.08));
+  --text-main: light-dark(#101321, #e6e9f0);
+  --text-muted: light-dark(#555d7a, #9ba4c4);
+  --accent: light-dark(#374bff, #7c5cff);
+}
