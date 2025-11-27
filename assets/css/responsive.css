@@ -1,0 +1,10 @@
+@media (min-width: 720px) {
+  main section {
+    margin-inline: auto;
+  }
+
+  nav ul {
+    grid-auto-flow: column;
+    justify-content: center;
+  }
+}
