@@ -1,9 +1,9 @@
 ## Feature Request
 
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
+name: Feature request<br>
+about: Suggest an idea for this project<br>
+title: ''<br>
+labels: ''<br>
 assignees: ''
 
 ### SUMMARY
