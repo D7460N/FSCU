@@ -1,20 +1,28 @@
----
+## Feature Request
+
 name: Feature request
 about: Suggest an idea for this project
 title: ''
 labels: ''
 assignees: ''
 
----
+### SUMMARY
+Describe the feature or enhancement you want added.
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+### REASONING 
+Why is this important or useful?
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+### PROPOSED APPROACH 
+Explain how this could align with pure HTML + CSS logic.
 
-**Describe alternatives you've considered**
+**ALTERNATIVES CONSIDERED**
 A clear and concise description of any alternative solutions or features you've considered.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+### CHECKS 
+- [ ] Feature can be implemented without JavaScript
+- [ ] HTML stays semantic and attribute-free
+- [ ] CSS can express the state using `:has()` / `:empty()` / native selectors
+- [ ] No third-party dependencies required
+
+### ADDITIONAL NOTES 
+Optional details, references, or rough sketches.
