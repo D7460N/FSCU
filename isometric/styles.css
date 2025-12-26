@@ -1,0 +1,314 @@
+/* ===================================
+   D7460N Isometric Layout Styles
+   CSS-only toggle between normal and 3D isometric view
+   =================================== */
+
+/* Theme Variables */
+:root {
+  color-scheme: light dark;
+  
+  --bg-page: light-dark(#f5f7ff, #050816);
+  --bg-panel: light-dark(#ffffff, #0b1020);
+  --border-panel: light-dark(#c5cbe8, rgba(255, 255, 255, 0.08));
+  --text-main: light-dark(#101321, #e6e9f0);
+  --text-muted: light-dark(#555d7a, #9ba4c4);
+  --accent: light-dark(#374bff, #7c5cff);
+  
+  --transition-duration: 600ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body as Grid Container for Holy Grail Layout */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  gap: 0;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  perspective: 2000px;
+  perspective-origin: 50% 50%;
+  transition-property: perspective, perspective-origin;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+/* Grid Area Assignments */
+header {
+  grid-area: header;
+  background-color: var(--bg-panel);
+  border-bottom: 1px solid var(--border-panel);
+  padding: 2rem;
+  text-align: center;
+  transform-origin: center center;
+  transition: transform var(--transition-duration) var(--transition-timing-function),
+              background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+nav {
+  grid-area: nav;
+  background-color: var(--bg-panel);
+  border-right: 1px solid var(--border-panel);
+  padding: 1.5rem;
+  transform-origin: right center;
+  transition: transform var(--transition-duration) var(--transition-timing-function),
+              background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+main {
+  grid-area: main;
+  padding: 2rem;
+  transform-origin: center center;
+  transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+
+aside {
+  grid-area: aside;
+  background-color: var(--bg-panel);
+  border-left: 1px solid var(--border-panel);
+  padding: 1.5rem;
+  transform-origin: left center;
+  transition: transform var(--transition-duration) var(--transition-timing-function),
+              background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--bg-panel);
+  border-top: 1px solid var(--border-panel);
+  padding: 1.5rem;
+  text-align: center;
+  transform-origin: center center;
+  transition: transform var(--transition-duration) var(--transition-timing-function),
+              background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+/* Typography */
+h1 {
+  margin: 0.5rem 0 0;
+  font-size: 1.75rem;
+  color: var(--text-main);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  color: var(--text-main);
+}
+
+h3 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+p {
+  margin: 0.5rem 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+figure {
+  margin: 0;
+}
+
+/* Sections */
+section {
+  padding: 1.25rem 1.5rem;
+  margin-block: 0.75rem;
+  background-color: var(--bg-panel);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-panel);
+}
+
+article {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Navigation Styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+nav li {
+  margin: 0;
+}
+
+a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: var(--accent);
+  border-radius: 0.25rem;
+  transition: background-color 200ms ease;
+}
+
+a:hover {
+  background-color: var(--border-panel);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Toggle Button Styling */
+label[role="button"] {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 200ms ease, transform 100ms ease;
+}
+
+label[role="button"]:hover {
+  background-color: color-mix(in srgb, var(--accent) 85%, black);
+  transform: translateY(-2px);
+}
+
+label[role="button"]:active {
+  transform: translateY(0);
+}
+
+/* Hide the checkbox but keep it functional */
+label[role="button"] input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* Visual indicator when checkbox is checked */
+body:has(label[role="button"] input[type="checkbox"]:checked) label[role="button"] {
+  background-color: color-mix(in srgb, var(--accent) 60%, white);
+}
+
+/* ===================================
+   ISOMETRIC MODE TRANSFORMS
+   Activated when checkbox is :checked
+   =================================== */
+
+/* Transform the entire grid when toggle is checked */
+body:has(label[role="button"] input[type="checkbox"]:checked) {
+  perspective: 3000px;
+  perspective-origin: 50% 30%;
+}
+
+/* Header - Top face of the 3D layout */
+body:has(label[role="button"] input[type="checkbox"]:checked) header {
+  transform: rotateX(60deg) translateZ(100px) translateY(-80px);
+}
+
+/* Nav - Left side panel */
+body:has(label[role="button"] input[type="checkbox"]:checked) nav {
+  transform: rotateY(30deg) rotateX(15deg) translateX(-20px) translateZ(50px);
+}
+
+/* Main - Center elevated content */
+body:has(label[role="button"] input[type="checkbox"]:checked) main {
+  transform: rotateX(15deg) rotateY(-5deg) translateZ(120px) scale(1.05);
+}
+
+/* Aside - Right side panel */
+body:has(label[role="button"] input[type="checkbox"]:checked) aside {
+  transform: rotateY(-30deg) rotateX(15deg) translateX(20px) translateZ(50px);
+}
+
+/* Footer - Bottom face */
+body:has(label[role="button"] input[type="checkbox"]:checked) footer {
+  transform: rotateX(-60deg) translateZ(100px) translateY(80px);
+}
+
+/* Add subtle shadows in isometric mode for depth */
+body:has(label[role="button"] input[type="checkbox"]:checked) header,
+body:has(label[role="button"] input[type="checkbox"]:checked) nav,
+body:has(label[role="button"] input[type="checkbox"]:checked) aside,
+body:has(label[role="button"] input[type="checkbox"]:checked) footer {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+body:has(label[role="button"] input[type="checkbox"]:checked) main {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+  
+  body:has(label[role="button"] input[type="checkbox"]:checked) header,
+  body:has(label[role="button"] input[type="checkbox"]:checked) nav,
+  body:has(label[role="button"] input[type="checkbox"]:checked) main,
+  body:has(label[role="button"] input[type="checkbox"]:checked) aside,
+  body:has(label[role="button"] input[type="checkbox"]:checked) footer {
+    transform: none;
+  }
+}
+
+/* Responsive: Stack layout on smaller screens */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+  
+  nav,
+  aside {
+    border: none;
+    border-top: 1px solid var(--border-panel);
+    border-bottom: 1px solid var(--border-panel);
+  }
+  
+  /* Adjust isometric transforms for mobile */
+  body:has(label[role="button"] input[type="checkbox"]:checked) header {
+    transform: rotateX(45deg) translateZ(50px) translateY(-40px);
+  }
+  
+  body:has(label[role="button"] input[type="checkbox"]:checked) nav,
+  body:has(label[role="button"] input[type="checkbox"]:checked) aside {
+    transform: rotateX(15deg) translateZ(30px);
+  }
+  
+  body:has(label[role="button"] input[type="checkbox"]:checked) main {
+    transform: rotateX(20deg) translateZ(60px) scale(1.02);
+  }
+  
+  body:has(label[role="button"] input[type="checkbox"]:checked) footer {
+    transform: rotateX(-45deg) translateZ(50px) translateY(40px);
+  }
+}
